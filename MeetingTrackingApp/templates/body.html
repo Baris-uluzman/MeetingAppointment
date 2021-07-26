@@ -1,0 +1,122 @@
+{{define "body"}}
+
+<div class="container" id="customPopup">    
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        Meeting Appointment
+        <button type="button" class="close" id="closePopupButton" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div class="panel-body">
+            <input type="hidden" id="startDateScheduled">        
+            <input type="hidden" id="endDateScheduled">        
+            <div class="dropdown">
+                <button class="btn dropdown-toggle roomCbBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="1">Kindy Meeting Room
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li value="1"><a href="#">Kindy Meeting Room</a></li>
+                  <li value="2"><a href="#">Farabi Meeting Room</a></li>
+                  <!--<li value="3"><a href="#">ROOM3</a></li>-->
+                </ul>
+              </div>
+
+            <div>
+                <label for="requesterName">Meeting Subject</label>
+                <input type="text" class="form-control" id="meetingSubject" placeholder="Enter Meeting Subject">              
+            </div>
+
+            <div>
+              <label for="requesterName">Request Sender Name</label>
+              <input type="text" class="form-control" id="requesterName" placeholder="Enter Name">              
+            </div>
+            <div>
+              <label for="requesterMail">Request Sender E-Mail</label>
+              <input type="email" class="form-control" id="requesterMail" aria-describedby="emailHelp" placeholder="Enter E-Mail">
+            </div> 
+            <div>
+                <label for="requesterDescription">Description</label>                
+                <textarea class="form-control" id="requesterDescription" rows="3"></textarea>
+            </div> 
+            <div>
+                <button type="button" id="addScheduleButton" class="btn">Submit</button>          
+            </div>            
+
+            
+    </div>
+  </div>    
+</div>
+<div id="lnb">  
+    <div id="lnb-calendars" class="lnb-calendars">
+        <div>
+            <div class="lnb-calendars-item">
+                <label>
+                    <input class="tui-full-calendar-checkbox-square" type="checkbox" value="all" checked>
+                    <span></span>
+                    <strong>View all</strong>
+                </label>
+            </div>
+        </div>
+        <div id="calendarList" class="lnb-calendars-d1">
+        </div>
+    </div>
+    <div class="lnb-footer">
+        © NHN Corp.
+    </div>
+</div>
+<div id="right">
+    <div id="menu">
+        <span class="dropdown">
+            <button id="dropdownMenu-calendarType" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true">
+                <i id="calendarTypeIcon" class="calendar-icon ic_view_month" style="margin-right: 4px;"></i>
+                <span id="calendarTypeName">Dropdown</span>&nbsp;
+                <i class="calendar-icon tui-full-calendar-dropdown-arrow"></i>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-calendarType">
+                <li role="presentation">
+                    <a class="dropdown-menu-title" role="menuitem" data-action="toggle-daily">
+                        <i class="calendar-icon ic_view_day"></i>Daily
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="dropdown-menu-title" role="menuitem" data-action="toggle-weekly">
+                        <i class="calendar-icon ic_view_week"></i>Weekly
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="dropdown-menu-title" role="menuitem" data-action="toggle-monthly">
+                        <i class="calendar-icon ic_view_month"></i>Month
+                    </a>
+                </li>
+                                  
+            </ul>
+        </span>
+        <span id="menu-navi">
+            <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
+            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
+                <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+            </button>
+            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
+                <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
+            </button>
+        </span>
+        <span id="renderRange" class="render-range"></span>
+    </div>
+    <div id="calendar"></div>
+</div>    
+    <!--<script src="/public/assets/scripts/jquery/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"  crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/public/assets/scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="/public/assets/scripts/toastUI//tui-code-snippet.min.js"></script>
+    <script src="/public/assets/scripts/toastUI//tui-time-picker.min.js"></script>
+    <script src="/public/assets/scripts/toastUI//tui-date-picker.min.js"></script>
+    <script src="/public/assets/scripts/toastUI//moment.min.js"></script>
+    <script src="/public/assets/scripts/toastUI/chance.min.js"></script>
+    <script src="/public/assets/dist/tui-calendar.js"></script>
+    <script src="/public/assets/scripts/data/calendars.js"></script>
+    <script src="/public/assets/scripts/data/schedules.js"></script>
+    <!-- <script src="./js/theme/dooray.js"></script> -->
+    <script src="/public/assets/scripts/app.js"></script> 
+    <script type="text/javascript" src="/public/assets/scripts/main.js"></script>
+{{end}}

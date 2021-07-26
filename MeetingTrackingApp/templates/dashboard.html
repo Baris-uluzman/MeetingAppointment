@@ -1,0 +1,45 @@
+{{define "body"}}
+<link rel="stylesheet" type="text/css" href="/public/assets/styles/dataTable/jquery.dataTables.min.css"/> 
+
+<button type="button" class="btn btn-default btn-sm" id="logoutButton">
+    Log out
+  </button>
+
+<div class="container" style="width: 100%;height: 100%;padding: 1%;">    
+
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Requester Name</th>
+                <th>Requester Mail</th>
+                <th>Meeting Room</th>
+                <th>Start date</th>
+                <th>End Date</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Approve/Reject</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Requester Name</th>
+                <th>Requester Mail</th>
+                <th>Meeting Room</th>
+                <th>Start date</th>
+                <th>End Date</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Approve/Reject</th>
+            </tr>
+        </tfoot>
+    </table>   
+</div>
+<script src="/public/assets/scripts/dataTable/jquery-3.5.1.js"></script>
+<script src="/public/assets/scripts/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/assets/scripts/dataTable/datatables.min.js"></script>
+<script src="/public/assets/scripts/dataTable/dataTable.js"></script>
+{{end}}
